@@ -1,0 +1,39 @@
+body{
+    margin:0;
+
+}
+
+.header{
+    height: 70px;
+    background-color: #5454bd;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.elements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.search{
+    border-radius: 50px;
+    background: #d4d4fa;
+    border: 1px solid #d4d4fa;
+    width: 100%;
+    height: 25px;
+    padding-left: 15px;
+    font-style: italic;
+}
+.btn{
+    border-radius: 50px;
+    background: #414ca6;
+    border: 3px solid #d4d4fa;
+    width: 70px;
+    height: 30px;
+    color: #d4d4fa;
+    margin: 20px;
+}
