@@ -1,17 +1,18 @@
-body{
-    margin:0;
+body {
+    margin: 0;
 
 }
 
-.header{
+.header {
     height: 70px;
-    background-color: #5454bd;
+    background-image: radial-gradient(rgb(155, 162, 155), rgb(73, 75, 73));
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     width: 100%;
+
 }
 
-.elements{
+.elements {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,21 +20,35 @@ body{
 
 }
 
-.search{
-    border-radius: 50px;
-    background: #d4d4fa;
-    border: 1px solid #d4d4fa;
+.search {
+    background: #f8f4ea;
+    border: 1px solid #ece5d1;
     width: 100%;
     height: 25px;
     padding-left: 15px;
     font-style: italic;
+    cursor: pointer;
 }
-.btn{
-    border-radius: 50px;
-    background: #414ca6;
-    border: 3px solid #d4d4fa;
+
+.btn {
+    cursor: pointer;
+    background: #424242;
+    border: 3px solid #424242;
     width: 70px;
     height: 30px;
-    color: #d4d4fa;
-    margin: 20px;
+    color: #f8f4ea;
+}
+
+.name {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+    font-style: italic;
+    cursor: auto;
+
+}
+
+.theme {
+    display: flex;
+    justify-content: space-between;
 }

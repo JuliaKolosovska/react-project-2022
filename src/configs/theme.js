@@ -16,7 +16,7 @@ function Theme() {
     }, [theme]);
     return (
         <div className={`Theme ${theme}`}>
-            <button onClick={toggleTheme}>Toggle Theme</button>
+            <p onClick={toggleTheme}>Toggle Theme</p>
 
 
         </div>

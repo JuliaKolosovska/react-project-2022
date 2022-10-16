@@ -8,12 +8,15 @@ const Header = () => {
     const navigate = useNavigate();
 
     return (
+        <div> <div className={css.theme}><p className={css.name}>Kolos Movie Club</p>  <Theme/></div>
         <div className={css.header}>
+
             <div className={css.elements}>
                 <form><input className={css.search} type="text" placeholder={'What areYou looking for?'} /></form>
-                <button className={css.btn}onClick={() => navigate('/search')}>Search</button>
-                <Theme/>
-            </div>
+                <button className={css.btn} onClick={() => navigate('/search')}>Search</button>
+               </div>
+
+        </div>
         </div>
     );
 };

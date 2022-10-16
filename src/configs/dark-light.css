@@ -1,18 +1,16 @@
 .dark {
-    background-color: #333;
-    color: #fff;
+    background-color: #424242;
+    color: #f8f1dc;
 }
 .light {
-    background-color: #fff;
-    color: #333;
+    background-color: #f8f1dc;
+    color: #424242;
 }
 
-button{
-    border-radius: 50px;
-    background: #414ca6;
-    border: 3px solid #d4d4fa;
-    width: 120px;
-    height: 30px;
-    color: #d4d4fa;
-
+p{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    font-style: italic;
+    cursor: pointer;
 }
