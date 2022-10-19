@@ -3,8 +3,8 @@ import {urls} from "../configs";
 
 
 const moviesService={
-    getAll:(page=1)=>axiosService.get(urls.movies,{params:{page}}),
-    addPhotoById: (id, data) => axiosService.patch(`${urls.cars}/${id}`, data)
+    getAll: (page)=>axiosService.get(`${urls.movies}?page=${page}`),
+    searchByTitle: (title)=>axiosService.get(`${urls.search}${title}`)
 }
 
 export {
