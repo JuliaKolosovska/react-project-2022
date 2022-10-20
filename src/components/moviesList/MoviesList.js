@@ -6,31 +6,62 @@ import {moviesService} from "../../services";
 import {getMovies} from "../../redux";
 import {moviesSlice} from "../../redux";
 import {useParams} from "react-router-dom";
-import {MoviesListCard} from "../moviesListCard/MoviesListCard";
+import {Movie} from "../moviesListCard/MoviesListCard";
+
 
 const MoviesList = () => {
+    //
+    // const [currentPage, setCurrentPage] = useState();
+    //
+    // const {movies, errors} = useSelector(state => state.moviesReducer);
+    //
+    //
+    //
+    // const value = useParams();
+    // const dispatch = useDispatch();
+    // useEffect(()=>{
+    //     dispatch(moviesService.getAll({currentPage}))
+    // },[dispatch, currentPage])
+    //
+    // const paginate = (pageNumber) =>{
+    //     setCurrentPage(pageNumber)
+    // }
+    // const {movies} = useSelector(state => state.moviesReducer);
 
-    const [currentPage, setCurrentPage] = useState();
+    // const dispatch = useDispatch();
+    const [movies, setMovies]=useState([]);
+    const [query, setQuery]=useState('');
 
-    const {movies, errors} = useSelector(state => state.moviesReducer);
+    useEffect(() => {
+        moviesService.getAll().then((res)=>res.json())
+            .then(data=>{
+                console.log(data);
+                setMovies(data.results);
+            })
+    }, [])
 
-
-
-    const value = useParams();
-    const dispatch = useDispatch();
-    useEffect(()=>{
-        dispatch(moviesService.getAll({currentPage}))
-    },[dispatch, currentPage])
-
-    const paginate = (pageNumber) =>{
-        setCurrentPage(pageNumber)
+    const searchMovie = async(e)=>{
+        e.preventDefault();
+        console.log("Searching");
+        try{
+            const url=`https://api.themoviedb.org/3/search/movie?api_key=0995b0f52614f6de6fc7f60ea73e7824&query=${query}`;
+            const res= await fetch(url);
+            const data= await res.json();
+            console.log(data);
+            setMovies(data.results);
+        }
+        catch(e){
+            console.log(e);
+        }
     }
-
+    const changeHandler=(e)=>{
+        setQuery(e.target.value);
+    }
     return (
         <div>
 
-                {errors && <h3>{JSON.stringify(errors)}</h3>}
-            {movies.results && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+
+            {movies.results && movies.results.map(movie => <Movie key={movie.id} movie={movie}/>)}
 
 
         </div>

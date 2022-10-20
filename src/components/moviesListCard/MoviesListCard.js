@@ -1,20 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const MoviesListCard = ({movie}) => {
-    const{id, title, vote_average, poster_path} = movie;
+import {img} from "../../configs";
 
-    const image_path = 'https://image.tmdb.org/t/p/w500'
+const Movie = ({title, poster_path, vote_average, release_date, overview}) => {
+    const [show, setShow] = useState(false);
+
+    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+
 
     return (
         <div>
-            <div>id: {id}</div>
-            <div>title: {title}</div>
-            <div>{vote_average}</div>
             <div>
-                {poster_path && <img src={`${image_path}${poster_path}`} alt={title}/>}
+                <img src={img + poster_path} alt ='poster'/>
+                <div>
+                    <button onClick={handleShow}>Details</button>
+                    {/*<Modal show={show} onHide={handleClose}>*/}
+                    <h3>{title}</h3>
+                    <h4>IMDb: {vote_average}</h4>
+                    <h5>Release Date: {release_date}</h5>
+                    <br></br>
+                    <h6>Overview</h6>
+                    <p>{overview}</p>
+
+                </div>
             </div>
+
         </div>
     );
 };
 
-export {MoviesListCard};
+export {Movie};
